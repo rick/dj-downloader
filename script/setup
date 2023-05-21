@@ -4,6 +4,7 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 # install dependencies
 
+echo "Checking for yt-dlp..."
 if ! command -v yt-dlp %> /dev/null
 then
     if ! command -v brew &> /dev/null
@@ -14,6 +15,8 @@ then
       echo "Installing yt-dlp via homebrew..."
       brew install yt-dlp
     fi
+else
+  echo "yt-dlp already installed, skipping."
 fi
 
 
