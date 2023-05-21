@@ -1,0 +1,33 @@
+#!/bin/bash
+
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+# install dependencies
+
+if ! command -v yt-dlp %> /dev/null
+then
+    if ! command -v brew &> /dev/null
+    then
+      echo "yt-dlp could not be found and homebrew is not installed. Please install yt-dlp manually or install homebrew."
+      exit 1
+    else
+      echo "Installing yt-dlp via homebrew..."
+      brew install yt-dlp
+    fi
+fi
+
+
+# install Desktop icon for drag-and-drop
+if [ -d "${HOME}/Desktop/dj-download.app" ]; then
+  echo "DJ Downloader already installed to the Desktop, skipping."
+else
+  set -e
+
+  cd "${SCRIPT_DIR}/../workflow-app/"
+  echo "Installing DJ Downloader to the Desktop..."
+  cp -r dj-download.app "${HOME}/Desktop/"
+
+  set +e
+fi
+
+echo "Done."
