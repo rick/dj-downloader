@@ -15,8 +15,11 @@ From a `Terminal.app` command-line run:
 ```
 git clone https://github.com/rick/dj-downloader
 cd dj-downloader
+script/bootstrap
 script/setup
 ```
+
+Then edit the `config.yml` file to set the path for the folder where mp3 files should be output, and the path to `yt-dlp` (e.g., the output of `which yt-dlp`)
 
 ## Running
 
