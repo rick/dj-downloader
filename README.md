@@ -6,6 +6,7 @@ Allows pasting youtube URLs into a Terminal running this tool, which then downlo
 
  - [Homebrew](https://brew.sh/)
  - [yt-dlp](https://github.com/yt-dlp/yt-dlp) (will attempt to install via homebrew if not found)
+ - [ffmpeg](https://ffmpeg.org/) (will attempt to install via homebrew if not found)
 
 ## Installation
 
@@ -17,10 +18,10 @@ cd dj-downloader
 script/setup
 ```
 
-If this is successful this will have installed a `dj-downloader` icon to the current user's Desktop. Drag YouTube URLs here.
+## Running
 
-## TODO
+From the same checkout path just:
 
- - deezer integrations via Deemix?
-
-
+```
+./run
+```
