@@ -1,3 +1,5 @@
+![](./images/dj.png)
+
 ## DJ Downloader
 
 Allows pasting youtube URLs into a Terminal running this tool, which then downloads the mp3 audio for the URL in question and stores it in the config-specified directory.
