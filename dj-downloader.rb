@@ -3,12 +3,6 @@
 require "yaml"
 require "fileutils"
 
-# ensure we log all output and errors to our logfile
-log_dir = File.join(File.dirname(__FILE__), 'log')
-$stdout.reopen(File.join(log_dir, "dj-downloader.log"), "w")
-$stdout.sync = true
-$stderr.reopen($stdout)
-
 # read config.yml from current directory
 config = YAML.load_file(File.join(File.dirname(__FILE__), 'config.yml'))
 
@@ -28,12 +22,15 @@ if config['dj_downloader_path'].nil?
   exit
 end
 
-# get list of URLs to download from command-line arguments
-files_to_download = ARGV
+puts "Starting DJ Downloader...\n\n"
+puts "Paste the URLs of the files you want to download, one per line, be sure to hit <Enter>."
 
-# download each file
-files_to_download.each_with_index do |file, index|
-  puts "Downloading #{file} (#{index + 1}/#{files_to_download.length})"
+# read URLs from stdin
+files_to_download = []
+while line = gets
+  file = line.chomp
+  next if file =~ /^\s*$/
+
+  puts "Downloading #{file} ..."
   `#{config['dj_downloader_path']} --paths #{config['output_dir']} --restrict-filenames --no-mtime --newline -x --audio-format mp3 #{file} `
 end
-
