@@ -1,6 +1,6 @@
 ## DJ Downloader
 
-Allows dragging and dropping a YouTube URL to a Desktop icon and automates downloading an mp3 file of the youtube video's audio to a DJ directory.
+Allows pasting youtube URLs into a Terminal running this tool, which then downloads the mp3 audio for the URL in question and stores it in the config-specified directory.
 
 # Dependencies
 
@@ -19,10 +19,8 @@ script/setup
 
 If this is successful this will have installed a `dj-downloader` icon to the current user's Desktop. Drag YouTube URLs here.
 
-
 ## TODO
 
- - we need a way to configure the destination path for DJ files, probably at setup time; probably stored in some sort of config file
  - deezer integrations via Deemix?
 
 
