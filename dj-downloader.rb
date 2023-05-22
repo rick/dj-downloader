@@ -32,5 +32,5 @@ while line = gets
   next if file =~ /^\s*$/
 
   puts "Downloading #{file} ..."
-  `#{config['dj_downloader_path']} --paths #{config['output_dir']} --restrict-filenames --no-mtime --newline -x --audio-format mp3 #{file} `
+  system("#{config['dj_downloader_path']} --paths #{config['output_dir']} --restrict-filenames --no-mtime --newline -x --audio-format mp3 #{file}")
 end
