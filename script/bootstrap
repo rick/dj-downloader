@@ -19,18 +19,4 @@ else
   echo "yt-dlp already installed, skipping."
 fi
 
-
-# install Desktop icon for drag-and-drop
-if [ -d "${HOME}/Desktop/dj-download.app" ]; then
-  echo "DJ Downloader already installed to the Desktop, skipping."
-else
-  set -e
-
-  cd "${SCRIPT_DIR}/../workflow-app/"
-  echo "Installing DJ Downloader to the Desktop..."
-  cp -r dj-download.app "${HOME}/Desktop/"
-
-  set +e
-fi
-
 echo "Done."
