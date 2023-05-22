@@ -1,0 +1,14 @@
+#!/bin/bash
+
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+# install Desktop icon for drag-and-drop
+if [ -f "${SCRIPT_DIR}/../config.yml" ]; then
+  echo "config.yml already exists. Skipping."
+else
+  echo "Copying config.yml-sample to config.yml..."
+  cp "${SCRIPT_DIR}/../config.yml-sample" "${SCRIPT_DIR}/../config.yml"
+  echo "Please edit config.yml to set your paths."
+fi
+
+echo "Done."
