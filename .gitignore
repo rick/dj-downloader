@@ -1,4 +1,2 @@
 .DS_Store
-log/*
-!log/.keep
 config.yml
