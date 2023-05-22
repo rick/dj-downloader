@@ -30,3 +30,8 @@ From the same checkout path just:
 ```
 ./run
 ```
+
+
+## but why?
+
+Because I have a DJ console from 2012 era that's really cool and kids want to DJ, but they don't have a collection of tracks and just want to beat mix and loop kid stuff they find on youtube. So, "hey, just copy that link and drop it in here, and then when it stops spitting words hit `Refresh` on the DJ collection here..."
