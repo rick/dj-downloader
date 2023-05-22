@@ -19,4 +19,19 @@ else
   echo "yt-dlp already installed, skipping."
 fi
 
+echo "Checking for ffmpeg..."
+if ! command -v ffmpeg %> /dev/null
+then
+    if ! command -v brew &> /dev/null
+    then
+      echo "ffmpeg could not be found and homebrew is not installed. Please install ffmpeg manually or install homebrew."
+      exit 1
+    else
+      echo "Installing ffmpeg via homebrew..."
+      brew install ffmpeg
+    fi
+else
+  echo "ffmpeg already installed, skipping."
+fi
+
 echo "Done."
